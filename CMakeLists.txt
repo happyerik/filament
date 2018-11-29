@@ -269,7 +269,7 @@ endif()
 # Sets the following variables: RESGEN_HEADER, RESGEN_SOURCE, RESGEN_FLAGS, and RESGEN_OUTPUTS
 function(get_resgen_vars ARCHIVE_DIR ARCHIVE_NAME)
     set(RESGEN_HEADER "${ARCHIVE_DIR}/${ARCHIVE_NAME}.h" PARENT_SCOPE)
-    if (WEBGL)
+    if (WEBGL OR WIN32)
         set(RESGEN_SOURCE "${ARCHIVE_DIR}/${ARCHIVE_NAME}.c" PARENT_SCOPE)
     else()
         if (NOT WIN32)
